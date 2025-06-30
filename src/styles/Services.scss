@@ -1,0 +1,203 @@
+.cursor {
+  height: 2vw;
+  width: 2vw;
+  background-color: #fff;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1;
+}
+
+.cursor-blur {
+  height: 4vw;
+  width: 4vw;
+  background-color: #d3dcad;
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(30px);
+  z-index: 1;
+}
+
+.services {
+  background-color: #111;
+  color: white;
+  padding-top: 10vw;
+  text-align: center;
+  font-family: NB;
+  padding: 10vw 0 2vw 0;
+
+  h1 {
+    font-size: 3vw;
+    margin-bottom: 1vw;
+    width: 90%;
+    margin: 0 auto 7vw auto;
+  }
+
+  .para-wrapper {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+
+    .quote {
+      position: absolute;
+      font-size: 2.3vw;
+      color: #fff;
+    }
+
+    .left-quote {
+      top: -1.5vw;
+      left: 1vw;
+    }
+
+    p {
+      font-size: 1.2vw;
+      line-height: 1.7;
+      color: #bbbbbb;
+      width: 82%;
+      margin: 0 auto;
+    }
+
+    .right-quote {
+      bottom: -1.5vw;
+      right: 1vw;
+    }
+  }
+
+
+  .services-list {
+    margin: 5vw auto;
+    width: 85%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    h2 {
+      font-size: 2.2vw;
+      color: #fff;
+      margin-bottom: 3vw;
+      font-weight: lighter;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3vw;
+      text-align: left;
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          position: relative;
+          background: linear-gradient(to right bottom,
+              rgba(0, 0, 0, 0.6),
+              rgba(75, 76, 69, 0.6));
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          padding: 1.5vw;
+          border-radius: 10px;
+          margin-bottom: 2vw;
+          color: #ccc;
+          font-size: 1.1vw;
+          line-height: 1.6;
+          transition: all 0.3s ease;
+          z-index: 2;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 10vw;
+          height: 11vw;
+
+          i {
+            color: #d3dcad;
+            margin-right: 0.7vw;
+            font-size: 1.3vw;
+          }
+
+          h4 {
+            color: #fff;
+            font-size: 1.2vw;
+            font-weight: 600;
+            margin: 0.5vw 0 0.9vw;
+          }
+
+          p {
+            color: #ccc;
+            font-size: 1.05vw;
+            margin: 0;
+            line-height: 1.5;
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.08);
+          }
+        }
+      }
+    }
+  }
+
+  .custom-box {
+    position: relative;
+    background: linear-gradient(to right bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(75, 76, 69, 0.6));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 5vw auto;
+    width: 75%;
+    padding: 3vw;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(211, 220, 173, 0.1);
+    z-index: 2;
+
+    h3 {
+      font-size: 1.8vw;
+      color: #d3dcad;
+      margin-bottom: 1.5vw;
+    }
+
+    p {
+      font-size: 1.1vw;
+      color: #ccc;
+      line-height: 1.8;
+    }
+  }
+
+  .services-footer {
+    margin: 4vw auto;
+    width: 70%;
+    text-align: center;
+
+    h3 {
+      font-size: 2vw;
+      color: #fff;
+      margin-bottom: 2vw;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2vw;
+
+      li {
+        font-size: 1.2vw;
+        color: #d3dcad;
+        margin-bottom: 1vw;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      font-size: 1.1vw;
+      color: #ccc;
+      margin-top: 5vw;
+    }
+
+    strong {
+      color: #fff;
+    }
+  }
+
+}

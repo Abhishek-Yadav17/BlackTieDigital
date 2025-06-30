@@ -1,0 +1,226 @@
+.about-us {
+    min-height: 100vh;
+    padding: 8vw 5vw;
+    background-color: #0f0f0f;
+    color: white;
+    padding-top: 10vw;
+    text-align: center;
+    font-family: NB;
+
+    h1 {
+        font-size: 3vw;
+        margin-bottom: 3vw;
+        color: #ffffff;
+    }
+
+    .para-wrapper {
+        position: relative;
+        width: 70%;
+        margin: 0 auto;
+
+        .quote {
+            position: absolute;
+            font-size: 2.3vw;
+            color: #fff;
+        }
+
+        .left-quote {
+            top: -1.5vw;
+            left: 1vw;
+        }
+
+        p {
+            font-size: 1.2vw;
+            line-height: 1.7;
+            color: #bbbbbb;
+            width: 82%;
+            margin: 0 auto;
+        }
+
+        .right-quote {
+            bottom: -1.5vw;
+            right: 1vw;
+        }
+    }
+
+    .about-details {
+        position: relative;
+        height: 20vw;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        gap: 4vw;
+        margin-top: 8vw;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+            height: 100%;
+            width: 50%;
+            object-fit: cover;
+            border-radius: 1vw;
+        }
+
+        h4 {
+            width: 50%;
+            align-self: flex-end;
+            text-align: left;
+            line-height: 1.8vw;
+            color: #ccc;
+            font-weight: lighter;
+        }
+    }
+
+    .mission-vision {
+        width: 80%;
+        margin: 8vw auto 4vw auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 2vw;
+
+        .mv-box {
+            height: fit-content;
+            width: 45%;
+            padding: 2vw;
+            background: linear-gradient(to right bottom,
+                    rgba(0, 0, 0, 0.6),
+                    rgba(75, 76, 69, 0.6));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1vw;
+            box-shadow: 0px 1px 16px -8px rgba(255, 255, 255, 0.75);
+            color: white;
+            text-align: left;
+            z-index: 2;
+
+            h2 {
+                font-size: 1.5vw;
+                margin-bottom: 1.5vw;
+                color: #ffffff;
+            }
+
+            p {
+                font-size: 1vw;
+                color: #ccc;
+                line-height: 1.4;
+            }
+
+            &:hover {
+                transform: scale(1.02);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+
+    .features {
+        max-width: 80%;
+        margin: 8vw auto 6vw auto;
+        z-index: 2;
+
+        h2 {
+            font-size: 2vw;
+            margin-bottom: 5vw;
+            text-align: center;
+            color: #fff;
+        }
+
+        .features-list {
+            position: relative;
+            list-style: none;
+            padding: 0;
+            z-index: 2;
+
+            li {
+                margin-bottom: 1.6vw;
+                padding: 1.2vw 2vw;
+                background-color: #1c1c1c;
+                border-left: 4px solid #ffffff50;
+                border-radius: 0.5vw;
+                font-size: 1vw;
+                text-align: left;
+                color: #ccc;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #222;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .growth-message-wrapper {
+        position: relative;
+        max-width: 80%;
+        margin: 8vw auto 2vw auto;
+        color: #ccc;
+        font-size: 1.2vw;
+        line-height: 1.8;
+        z-index: 2;
+
+        .outside-box {
+            text-align: center;
+            max-width: 75%;
+            margin: 0 auto 4vw auto;
+
+            p {
+                color: #ccc;
+
+                strong {
+                    color: #fff;
+                }
+            }
+        }
+
+        .growth-message {
+            height: fit-content;
+            position: relative;
+            border-radius: 10px;
+            background: linear-gradient(to right bottom,
+                    rgba(0, 0, 0, 0.6),
+                    rgba(75, 76, 69, 0.6));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 3vw 4vw;
+            display: flex;
+            flex-direction: column;
+            gap: 3vw;
+
+            .msg-highlight {
+                h2 {
+                    font-size: 2vw;
+                    font-weight: 600;
+                    text-align: center;
+                    margin: 0.5vw 0;
+                    line-height: 1.4;
+                }
+
+                h2+h2 {
+                    font-weight: 700;
+                }
+            }
+
+            .msg-block {
+                p {
+                    text-align: center;
+                    max-width: 80%;
+                    margin: 0 auto;
+
+                    strong {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .msg-signoff {
+                p {
+                    text-align: center;
+                    font-size: 1.4vw;
+                    font-weight: 600;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

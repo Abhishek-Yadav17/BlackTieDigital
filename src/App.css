@@ -1,0 +1,15 @@
+@font-face {
+  font-family: NB;
+  src: url(/NBInternationalProBoo.ttf);
+}
+
+@font-face {
+  font-family: Rejouice;
+  src: url(/Rejouice-Headline.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

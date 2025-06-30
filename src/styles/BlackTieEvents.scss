@@ -1,0 +1,339 @@
+.cursor {
+    height: 2vw;
+    width: 2vw;
+    background-color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1;
+}
+
+.cursor-blur {
+    height: 4vw;
+    width: 4vw;
+    background-color: #d3dcad;
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: 1;
+}
+
+.blacktie-events {
+    min-height: 100vh;
+    background-color: #111;
+    color: white;
+    padding-top: 10vw;
+    padding-bottom: 2vw;
+    text-align: center;
+    font-family: NB;
+
+    h1 {
+        font-size: 3vw;
+        margin-bottom: 1vw;
+        position: relative;
+        z-index: 2;
+    }
+
+    .para-wrapper {
+        position: relative;
+        width: 70%;
+        margin: 5vw auto 2vw auto;
+        z-index: 2;
+
+        .quote {
+            position: absolute;
+            font-size: 2.3vw;
+            color: #fff;
+        }
+
+        .left-quote {
+            top: -1.5vw;
+            left: 1vw;
+        }
+
+        h4 {
+            font-size: 1.2vw;
+            font-weight: 400;
+            color: #cccccc;
+            line-height: 1.5;
+            width: 82%;
+            margin: 0 auto;
+        }
+
+        .right-quote {
+            bottom: -1.5vw;
+            right: 1vw;
+        }
+    }
+
+    .events {
+        width: 80%;
+        margin: 6vw auto;
+        text-align: left;
+        z-index: 2;
+        position: relative;
+
+        h2 {
+            font-size: 2.5vw;
+            margin-bottom: 3vw;
+            text-align: center;
+            font-weight: lighter;
+            color: #fff;
+        }
+
+        .event-box {
+            position: relative;
+            height: 30vw;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            display: flex;
+            margin-bottom: 4vw;
+
+            &.reverse {
+                flex-direction: row-reverse;
+            }
+
+            .background-img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                z-index: 1;
+
+                &.wedding-bg {
+                    background-image: url('/wedding.jpg');
+                }
+
+                &.corporate-bg {
+                    background-image: url('/caricature.jpg');
+                }
+            }
+
+            .overlay {
+                position: relative;
+                z-index: 2;
+                background: rgba(0, 0, 0, 0.386);
+                backdrop-filter: blur(6px);
+                height: 100%;
+                width: 60%;
+                padding: 3vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: #fff;
+                font-family: NB;
+
+                h4 {
+                    font-size: 1.8vw;
+                    margin-bottom: 1vw;
+                    color: #d3dcad;
+                }
+
+                p {
+                    font-size: 1.1vw;
+                    color: #ccc;
+                    line-height: 1.6;
+                    margin-bottom: 2vw;
+                }
+
+                .list-section {
+                    h5 {
+                        font-size: 1.3vw;
+                        margin-bottom: 1vw;
+                        color: #fff;
+                    }
+
+                    ul {
+                        padding-left: 1.5vw;
+
+                        li {
+                            font-size: 1vw;
+                            line-height: 1.8;
+                            list-style-type: disc;
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+
+        h3 {
+            font-size: 1.2vw;
+            width: 60%;
+            margin: 4vw auto;
+            line-height: 1.5;
+            color: #ccc;
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        .small-events {
+            width: 80%;
+            margin: 5vw auto 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 2vw;
+
+            .small-event-box {
+                position: relative;
+                flex: 1;
+                height: 15vw;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+                .background-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    z-index: 1;
+
+                    &.festive-bg {
+                        background-image: url('/animated.jpg');
+                    }
+
+                    &.private-bg {
+                        background-image: url('/birthday.jpg');
+                    }
+                }
+
+                .overlay {
+                    position: relative;
+                    z-index: 2;
+                    background: rgba(0, 0, 0, 0.4);
+                    backdrop-filter: blur(6px);
+                    padding: 2vw;
+                    color: #fff;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h4 {
+                        font-size: 1.5vw;
+                        margin-bottom: 1vw;
+                        color: #d3dcad;
+                    }
+
+                    p {
+                        font-size: 1vw;
+                        color: #ccc;
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+    }
+
+    .features {
+        max-width: 80%;
+        margin: 8vw auto 6vw auto;
+        z-index: 2;
+
+        h2 {
+            font-size: 2vw;
+            margin-bottom: 3vw;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-list {
+            position: relative;
+            list-style: none;
+            padding: 0;
+            z-index: 2;
+            max-width: 80%;
+            margin: 0 auto;
+
+            li {
+                margin-bottom: 1.6vw;
+                padding: 1.2vw 2vw;
+                background-color: #1c1c1c;
+                border-left: 4px solid #ffffff50;
+                border-radius: 0.5vw;
+                font-size: 1vw;
+                text-align: left;
+                color: #ccc;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #222;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .bte-footer {
+        margin: 4vw auto 0 auto;
+        width: 70%;
+        text-align: center;
+        color: #ccc;
+        position: relative;
+        z-index: 2;
+
+        h3 {
+            font-size: 1.2vw;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 1.5vw;
+            font-weight: lighter;
+        }
+
+        h4 {
+            font-size: 1.4vw;
+            color: #d3dcad;
+            margin-bottom: 2vw;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2vw;
+
+            li {
+                font-size: 1.2vw;
+                color: #d3dcad;
+                margin-bottom: 1vw;
+                font-weight: 500;
+
+                .icon {
+                    font-size: 1.5vw;
+                    color: #e2e3dd;
+                    margin-right: 0.8vw;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        p {
+            font-size: 1.2vw;
+            margin: 0 auto;
+            margin-top: 2vw;
+            line-height: 2;
+            width: 60%;
+
+            a.contact-link {
+                color: #d3dcad;
+                text-decoration: underline;
+                cursor: pointer;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+}
