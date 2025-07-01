@@ -10,187 +10,207 @@ gsap.registerPlugin(ScrollTrigger);
 const GetInTouch = () => {
 
     useEffect(() => {
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
-    const ctx = gsap.context(() => {
-        const crsr = document.querySelector('.cursor');
-        const blur = document.querySelector('.cursor-blur');
+        const ctx = gsap.context(() => {
+            const crsr = document.querySelector('.cursor');
+            const blur = document.querySelector('.cursor-blur');
 
-        const onMouseMove = (e) => {
-            gsap.to(crsr, { left: e.clientX - 30, top: e.clientY - 30, duration: 0.1 });
-            gsap.to(blur, { left: e.clientX - 40, top: e.clientY - 40, duration: 0.1 });
-        };
-        document.addEventListener('mousemove', onMouseMove);
+            const onMouseMove = (e) => {
+                gsap.to(crsr, { left: e.clientX - 30, top: e.clientY - 30, duration: 0.1 });
+                gsap.to(blur, { left: e.clientX - 40, top: e.clientY - 40, duration: 0.1 });
+            };
+            document.addEventListener('mousemove', onMouseMove);
 
-        const animateText = (selector, stagger, scrollTriggerConfig = null) => {
-            const el = document.querySelector(selector);
-            if (!el) return;
-            const text = el.textContent;
-            el.innerHTML = '';
-            text.split('').forEach((char) => {
-                const span = document.createElement('span');
-                span.textContent = char === ' ' ? '\u00A0' : char;
-                span.style.display = 'inline-block';
-                span.style.opacity = 0;
-                el.appendChild(span);
-            });
+            const animateText = (selector, stagger, scrollTriggerConfig = null) => {
+                const el = document.querySelector(selector);
+                if (!el) return;
+                const text = el.textContent;
+                el.innerHTML = '';
+                text.split('').forEach((char) => {
+                    const span = document.createElement('span');
+                    span.textContent = char === ' ' ? '\u00A0' : char;
+                    span.style.display = 'inline-block';
+                    span.style.opacity = 0;
+                    el.appendChild(span);
+                });
 
-            const animConfig = {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power3.out',
-                stagger,
+                const animConfig = {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out',
+                    stagger,
+                };
+
+                if (scrollTriggerConfig) {
+                    animConfig.scrollTrigger = scrollTriggerConfig;
+                }
+
+                gsap.fromTo(
+                    `${selector} span`,
+                    { y: 100, opacity: 0 },
+                    animConfig
+                );
             };
 
-            if (scrollTriggerConfig) {
-                animConfig.scrollTrigger = scrollTriggerConfig;
-            }
+            animateText('.get-in-touch h1', 0.01);
+            animateText('.get-in-touch p', 0.01);
+
+            animateText('.contact h2', 0.02, {
+                trigger: '.contact h2',
+                start: 'top 80%',
+                end: 'bottom 70%',
+                scrub: 1,
+            });
+
+            animateText('.fill-form h2', 0.01, {
+                trigger: '.fill-form h2',
+                start: 'top 90%',
+                end: 'bottom 80%',
+                scrub: 1,
+            });
+
+            animateText('.fill-form h3', 0.008, {
+                trigger: '.fill-form h3',
+                start: 'top 90%',
+                end: 'bottom 80%',
+                scrub: 1,
+            });
 
             gsap.fromTo(
-                `${selector} span`,
-                { y: 100, opacity: 0 },
-                animConfig
+                '.fill-form .buttons button',
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out',
+                    stagger: 0.2,
+                    scrollTrigger: {
+                        trigger: '.fill-form .buttons',
+                        start: 'top 90%',
+                        end: 'bottom 80%',
+                        scrub: 1,
+                    }
+                }
             );
+
+            gsap.fromTo(
+                '.contact-form',
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: '.contact-form',
+                        start: 'top 95%',
+                        end: 'bottom 85%',
+                        scrub: 1,
+                    }
+                }
+            );
+
+            gsap.fromTo(
+                '.contact-box-wrapper .contact-box:nth-child(1)',
+                { x: -100, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: '.contact-box-wrapper',
+                        start: 'top 100%',
+                        scrub: 1,
+                    }
+                }
+            );
+
+            gsap.fromTo(
+                '.contact-box-wrapper .contact-box:nth-child(2)',
+                { x: 100, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: '.contact-box-wrapper',
+                        start: 'top 80%',
+                        scrub: 1,
+                    }
+                }
+            );
+
+            gsap.fromTo(
+                '.timings',
+                { scale: 0, opacity: 0 },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'back.out(1.7)',
+                    scrollTrigger: {
+                        trigger: '.timings',
+                        start: 'top 100%',
+                        scrub: 1,
+                    }
+                }
+            );
+
+            animateText('.contact-footer h2', 0.01, {
+                trigger: '.contact-footer h2',
+                start: 'top 90%',
+                end: 'bottom 80%',
+                scrub: 1,
+            });
+
+            animateText('.contact-footer h4', 0.005, {
+                trigger: '.contact-footer h4',
+                start: 'top 90%',
+                end: 'bottom 80%',
+                scrub: 1,
+            });
+
+            animateText('.contact-footer h3', 0.005, {
+                trigger: '.contact-footer h3',
+                start: 'top 90%',
+                end: 'bottom 80%',
+                scrub: 1,
+            });
+
+            return () => {
+                document.removeEventListener('mousemove', onMouseMove);
+                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            };
+        });
+
+        return () => ctx.revert();
+    }, []);
+
+    const sendEmail = async (e) => {
+        e.preventDefault();
+
+        const formData = {
+            firstName: e.target[0].value,
+            lastName: e.target[1].value,
+            email: e.target[2].value,
+            phone: e.target[3].value,
+            message: e.target[4].value,
         };
 
-        animateText('.get-in-touch h1', 0.01);
-        animateText('.get-in-touch p', 0.01);
-
-        animateText('.contact h2', 0.02, {
-            trigger: '.contact h2',
-            start: 'top 80%',
-            end: 'bottom 70%',
-            scrub: 1,
+        const res = await fetch('http://localhost:5000/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
         });
 
-        animateText('.fill-form h2', 0.01, {
-            trigger: '.fill-form h2',
-            start: 'top 90%',
-            end: 'bottom 80%',
-            scrub: 1,
-        });
-
-        animateText('.fill-form h3', 0.008, {
-            trigger: '.fill-form h3',
-            start: 'top 90%',
-            end: 'bottom 80%',
-            scrub: 1,
-        });
-
-        gsap.fromTo(
-            '.fill-form .buttons button',
-            { y: 30, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power3.out',
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: '.fill-form .buttons',
-                    start: 'top 90%',
-                    end: 'bottom 80%',
-                    scrub: 1,
-                }
-            }
-        );
-
-        gsap.fromTo(
-            '.contact-form',
-            { y: 30, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: '.contact-form',
-                    start: 'top 95%',
-                    end: 'bottom 85%',
-                    scrub: 1,
-                }
-            }
-        );
-
-        gsap.fromTo(
-            '.contact-box-wrapper .contact-box:nth-child(1)',
-            { x: -100, opacity: 0 },
-            {
-                x: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: '.contact-box-wrapper',
-                    start: 'top 100%',
-                    scrub: 1,
-                }
-            }
-        );
-
-        gsap.fromTo(
-            '.contact-box-wrapper .contact-box:nth-child(2)',
-            { x: 100, opacity: 0 },
-            {
-                x: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: '.contact-box-wrapper',
-                    start: 'top 80%',
-                    scrub: 1,
-                }
-            }
-        );
-
-        gsap.fromTo(
-            '.timings',
-            { scale: 0, opacity: 0 },
-            {
-                scale: 1,
-                opacity: 1,
-                duration: 1,
-                ease: 'back.out(1.7)',
-                scrollTrigger: {
-                    trigger: '.timings',
-                    start: 'top 100%',
-                    scrub: 1,
-                }
-            }
-        );
-
-        animateText('.contact-footer h2', 0.01, {
-            trigger: '.contact-footer h2',
-            start: 'top 90%',
-            end: 'bottom 80%',
-            scrub: 1,
-        });
-
-        animateText('.contact-footer h4', 0.005, {
-            trigger: '.contact-footer h4',
-            start: 'top 90%',
-            end: 'bottom 80%',
-            scrub: 1,
-        });
-
-        animateText('.contact-footer h3', 0.005, {
-            trigger: '.contact-footer h3',
-            start: 'top 90%',
-            end: 'bottom 80%',
-            scrub: 1,
-        });
-
-        return () => {
-            document.removeEventListener('mousemove', onMouseMove);
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    });
-
-    return () => ctx.revert();
-}, []);
-
+        if (res.ok) alert('Message sent!');
+        else alert('Failed to send.');
+    };
 
 
     return (
@@ -247,12 +267,12 @@ const GetInTouch = () => {
                                 <i className='ri-phone-fill'></i>
                                 <h4>Phone</h4>
                             </div>
-                            <h4>+123456789</h4>
+                            <h4>+91 88900 99108</h4>
                         </button>
                     </div>
 
                     <div className='contact-form'>
-                        <form>
+                        <form onSubmit={sendEmail}>
                             <div className='name-fields'>
                                 <input type='text' placeholder='First Name' />
                                 <input type='text' placeholder='Last Name' />

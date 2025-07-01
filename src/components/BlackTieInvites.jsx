@@ -304,7 +304,7 @@ const BlackTieInvites = () => {
                         At Black Tie Invites, we turn events into experiences. Whether it is a digital invite that gets people talking or a gift that makes someone smile - we are here to help you make it unforgettable.
                     </h3>
                     <ul>
-                        <li>📍 Based in Indore & Pune - Serving All of India</li>
+                        <li>📍 Based in Indore & Pune - Serving All over India</li>
                     </ul>
                     <p>
                         Get in touch to start designing your custom invitation or gifting plan today.

@@ -368,7 +368,7 @@
             line-height: 1.6;
         }
 
-        video {
+        img {
             width: 23vw;
             height: 15vw;
             object-fit: cover;
@@ -419,7 +419,8 @@
         position: relative;
         width: 100%;
         overflow: hidden;
-        margin-top: 5vw;
+        margin-top: 4vw;
+        z-index: 2;
 
         .marquee {
             display: flex;
@@ -434,7 +435,6 @@
 
                 img {
                     width: 6vw;
-                    border-radius: 50%;
                 }
             }
         }
@@ -518,6 +518,30 @@
                 line-height: 1.5vw;
                 color: #ccc;
             }
+        }
+    }
+
+    h4 {
+        font-size: 1.2vw;
+        line-height: 1.5;
+        color: #fff;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
+    }
+
+    h5 {
+        font-size: 1.2vw;
+        color: #d3dcad;
+        margin: 0 auto;
+        margin-top: 2vw;
+        line-height: 1.6;
+        width: 60%;
+        font-weight: lighter;
+
+        i {
+            margin-right: 1vw;
+            font-size: 1.3vw;
+            color: white;
         }
     }
 }

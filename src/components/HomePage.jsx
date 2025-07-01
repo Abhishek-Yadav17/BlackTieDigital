@@ -325,7 +325,7 @@ const HomePage = () => {
               <p>
                 A simple, friendly conversation to understand your business, your goals, and what you need help with.
               </p>
-              <video src="/step1.mp4" autoplay loop muted />
+              <img src="/step1.jpg" alt='step1' />
             </div>
 
             <div className="step-box">
@@ -333,7 +333,7 @@ const HomePage = () => {
               <p>
                 A tailored, step-by-step plan designed around your goals and your budget.
               </p>
-              <video src="/step2.mp4" autoplay loop muted />
+              <img src="/step2.jpg" alt='step2' />
             </div>
 
             <div className="step-box">
@@ -341,7 +341,7 @@ const HomePage = () => {
               <p>
                 From SEO to ads — we execute while you focus on running your business.
               </p>
-              <video src="/step3.mp4" autoplay loop muted />
+              <img src="/step3.jpg" alt='step3' />
             </div>
 
             <div className="step-box">
@@ -349,7 +349,7 @@ const HomePage = () => {
               <p>
                 We track performance and continuously refine your campaigns for better results.
               </p>
-              <video src="/step4.mp4" autoplay loop muted />
+              <img src="/birthday.jpg" alt='step4' />
             </div>
           </div>
 
@@ -378,6 +378,10 @@ const HomePage = () => {
               <div className='elem'><img src='/pramila.jpeg' alt='pramila' /></div>
               <div className='elem'><img src='/rivaz.png' alt='rivaz' /></div>
               <div className='elem'><img src='/butterfly.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/tata.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/apple.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/liugong.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/icici.png' alt='butterfly' /></div>
 
               <div className='elem'><img src='/csb.png' alt='csb' /></div>
               <div className='elem'><img src='/dubaifashion.png' alt='dubai' /></div>
@@ -388,6 +392,10 @@ const HomePage = () => {
               <div className='elem'><img src='/pramila.jpeg' alt='pramila' /></div>
               <div className='elem'><img src='/rivaz.png' alt='rivaz' /></div>
               <div className='elem'><img src='/butterfly.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/tata.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/apple.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/liugong.png' alt='butterfly' /></div>
+              <div className='elem'><img src='/icici.png' alt='butterfly' /></div>
             </div>
           </div>
         </div>
@@ -411,6 +419,9 @@ const HomePage = () => {
               <p>"Highly recommend their digital services. Working here is a good experience."</p>
             </div>
           </div>
+          <h4>Thank you for visiting — it's our privilege to be part of your digital success.
+          </h4>
+          <h5><i class="ri-phone-fill"></i>Let's bring your vision to life. Call now to book your service</h5>
         </div>
       </div>
 
