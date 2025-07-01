@@ -147,10 +147,9 @@ const HomePage = () => {
       );
     });
 
-    // Animate step-boxes: left boxes scale from left, right boxes scale from right
     const stepBoxes = document.querySelectorAll(".page4 .step-box");
     stepBoxes.forEach((box, index) => {
-      const fromX = index % 2 === 0 ? -100 : 100; // even index from left (-100), odd index from right (100)
+      const fromX = index % 2 === 0 ? -100 : 100;
 
       gsap.fromTo(
         box,
@@ -258,7 +257,7 @@ const HomePage = () => {
           <h3>Reconceptualizing The Idea Of Digital Marketing !</h3>
           <h4>100% Guaranteed Results In 30 Days !!</h4>
           <div className="buttons">
-            <button>Let's Talk Services<i className="ri-arrow-right-up-line"></i></button>
+            <button onClick={() => navigate('/services')}>Let's Talk Services<i className="ri-arrow-right-up-line"></i></button>
             <button onClick={() => navigate('/getintouch')}>Book Free Strategy Call <i className="ri-phone-fill"></i></button>
           </div>
           <div className="scroll-down"><i className="ri-arrow-down-line"></i></div>
