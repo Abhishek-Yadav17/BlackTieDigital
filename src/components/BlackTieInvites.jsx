@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlackTieInvites = () => {
     useEffect(() => {
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
         const ctx = gsap.context(() => {
             const crsr = document.querySelector('.cursor');
@@ -144,6 +144,25 @@ const BlackTieInvites = () => {
                 );
             });
 
+            gsap.utils.toArray('.features-footer h3, .features-footer ul li, .features-footer p').forEach((el) => {
+                gsap.fromTo(
+                    el,
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top 90%',
+                            end: 'top 80%',
+                            scrub: 1,
+                        },
+                    }
+                );
+            });
+
             return () => {
                 document.removeEventListener('mousemove', onMouseMove);
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -180,7 +199,7 @@ const BlackTieInvites = () => {
                 </div>
                 <div className='invite-types'>
                     <h2>
-                         All Types of Custom Invitations
+                        All Types of Custom Invitations
                     </h2>
                     <h4>
                         We specialize in designing and delivering unique invites that match your style, theme, and personality. Choose from a wide variety of formats and styles, including:

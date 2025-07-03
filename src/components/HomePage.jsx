@@ -7,6 +7,12 @@ gsap.registerPlugin(ScrollTrigger);
 import Navbar from '../components/Navbar';
 import Loader from '../components/Loader';
 import Footer from '../components/Footer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -171,46 +177,6 @@ const HomePage = () => {
       );
     });
 
-
-    gsap.from(".testimonial-cards .card:nth-child(1)", {
-      scrollTrigger: {
-        trigger: ".testimonial-cards",
-        start: "top 80%",
-        end: "top 30%",
-        scrub: true,
-      },
-      x: -200,
-      opacity: 0,
-      ease: "power2.out",
-    });
-
-    gsap.from(".testimonial-cards .card:nth-child(2)", {
-      scrollTrigger: {
-        trigger: ".testimonial-cards",
-        start: "top 80%",
-        end: "top 30%",
-        scrub: true,
-      },
-      scale: 0,
-      opacity: 0,
-      ease: "power2.out",
-    });
-
-    gsap.from(".testimonial-cards .card:nth-child(3)", {
-      scrollTrigger: {
-        trigger: ".testimonial-cards",
-        start: "top 90%",
-        end: "top 30%",
-        scrub: true,
-      },
-      x: 200,
-      opacity: 0,
-      ease: "power2.out",
-    });
-
-    animateLettersOnScroll(".features h1", 0.01);
-    animateLettersOnScroll(".features h4", 0.005);
-
     document.querySelectorAll(".elem p").forEach((p) => {
       const text = p.textContent;
       p.innerHTML = "";
@@ -235,6 +201,25 @@ const HomePage = () => {
           scrub: 1,
         },
       });
+    });
+
+    gsap.utils.toArray('.page6 h4, .page6 h5').forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 60%',
+            end: 'top 100%',
+            scrub: 1,
+          },
+        }
+      );
     });
   }, [showLoader]);
 
@@ -399,26 +384,83 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
         <div className="page6">
           <h1>Testimonials</h1>
-          <div className="testimonial-cards">
-            <div className="card">
-              <img src="/btd.jpeg" alt="client" />
-              <h2>Saurabh Gour</h2>
-              <p>"Great experience with Black Tie Digital India. They provide excellent SEO services that improved our search rankings significantly."</p>
-            </div>
-            <div className="card">
-              <img src="/btd.jpeg" alt="client" />
-              <h2>Harsh Kaushal</h2>
-              <p>"Awesome experience very nice team to work for social media marketing."</p>
-            </div>
-            <div className="card">
-              <img src="/btd.jpeg" alt="client" />
-              <h2>Mihir Kanojiya</h2>
-              <p>"Highly recommend their digital services. Working here is a good experience."</p>
-            </div>
-          </div>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={4}
+            slidesPerView={3.2}
+            centeredSlides={true}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            className="testimonial-swiper"
+          >
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Saurabh Gour</h2>
+                <p>"Great experience with Black Tie Digital India. They provided excellent SEO services that improved our search rankings significantly."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Harsh Kaushal</h2>
+                <p>"Awesome experience very nice team to work for social media marketing."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Swami Krapa</h2>
+                <p>"Black Tie Digital India prioritizes employee well-being, creating a motivating and friendly workplace. It's a pleasure to be part of such a dynamic team."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Frheta Foodtruck</h2>
+                <p>"We saw a noticeable improvement in our online engagement thanks to Black Tie Digital India. Their expertise in social media marketing is superb."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/liulongimg.jpg" alt="client" />
+                <h2>Liugong</h2>
+                <p>"Black Tie Digital India provides top-notch digital marketing services with a highly professional team. They delivered excellent results for our business, significantly improving our online presence. Highly recommend them for all your marketing needs!."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Mihir Kanojiya</h2>
+                <p>"Working here is a good experience."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Atharv Fitness</h2>
+                <p>"Black Tie Digital Team is having a good expertise in social media."</p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card">
+                <img src="/btd.jpeg" alt="client" />
+                <h2>Active Finword</h2>
+                <p>"Best social media marketing service providers."</p>
+              </div>
+            </SwiperSlide>
+
+          </Swiper>
+
           <h4>Thank you for visiting — it's our privilege to be part of your digital success.
           </h4>
           <h5><i class="ri-phone-fill"></i>Let's bring your vision to life. Call now to book your service</h5>

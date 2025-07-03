@@ -297,7 +297,7 @@ const AboutUs = () => {
                 </div>
                 <div className="about-details">
                     <h4>We specialize in building strategies that actually move the needle — from SEO, social media marketing, and paid ads, to content creation, branding, and lead generation. Every campaign we create is tailored, data-driven, and designed to help you reach your audience and outperform your competitors.</h4>
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipMAcwGaLd6fel1CH3mnboX_J5mlSM4TD_bRhkMT=s1360-w1360-h1020-rw" alt="about" />
+                    <img src="/step3.jpg" alt="about" />
                 </div>
                 <div className="mission-vision">
                     <div className="mv-box mission">
